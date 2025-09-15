@@ -188,7 +188,7 @@
         "outputs": {},
         "selected": false
       },
-      "width": 103,
+      "width": 104,
       "height": 66,
       "positionAbsolute": {
         "x": -2689.2417892009685,
@@ -1007,8 +1007,8 @@
     {
       "id": "customFunction_normalize_top_tasks",
       "position": {
-        "x": -1772.6416600621694,
-        "y": 143.56766051429491
+        "x": -1835.2380005810362,
+        "y": -253.78302277938081
       },
       "data": {
         "id": "customFunction_normalize_top_tasks",
@@ -1058,7 +1058,7 @@
               "variableValue": "<p><span class=\"variable\" data-type=\"mention\" data-id=\"llmAgentflow_0\" data-label=\"llmAgentflow_0\">{{ llmAgentflow_0 }}</span> </p>"
             }
           ],
-          "customFunctionJavascriptFunction": "const ctx = (typeof context !== 'undefined') ? context \n          : (typeof $ !== 'undefined') ? $\n          : (typeof input !== 'undefined') ? input \n          : {};\nif (!ctx._debug_raw) ctx._debug_raw = {};\nlet raw = ctx.top_tasks_json;\nctx._debug_raw['top_tasks_json_raw'] = raw === undefined ? null : raw;\nfunction extractArray(s){\n  if (!s) return null;\n  if (Array.isArray(s)) return s;\n  if (typeof s !== 'string') return null;\n  let str = s.trim();\n  // remove code fences\n  str = str.replace(/```[\\s\\S]*?```/g, '');\n  // try to find JSON array\n  let m = str.match(/\\[[\\s\\S]*\\]/);\n  if (m) return m[0];\n  // try to find object with key: top_tasks_json: [...] or \"top_tasks_json\": [...]\n  let key = 'top_tasks_json';\n  let regex = new RegExp(key + '\\\\s*[:=]\\\\s*([\\\\[\\\\{][\\\\s\\\\S]*)', 'i');\n  m = str.match(regex);\n  if (m && m[1]){\n    // try to extract array from m[1]\n    let mm = m[1].match(/\\[[\\s\\S]*\\]/);\n    if (mm) return mm[0];\n    // else maybe it's entire object - return m[1]\n    return m[1];\n  }\n  // fallback: if string starts with '{' try to parse and get key\n  if (/^\\{/.test(str)){\n    try{\n      let obj = JSON.parse(str);\n      if (Array.isArray(obj[key])) return obj[key];\n      if (Array.isArray(obj)) return obj;\n    }catch(e){}\n    // try relaxed parse by replacing unquoted keys with quoted ones\n    try{\n      let relaxed = str.replace(/([\\w\\d_]+)\\s*:/g, '\"$1\":');\n      let obj2 = JSON.parse(relaxed);\n      if (Array.isArray(obj2[key])) return obj2[key];\n      if (Array.isArray(obj2)) return obj2;\n    }catch(e){}\n  }\n  return null;\n}\n// Main try-catch block\ntry {\n  parsed = extractArray(raw);\n  // Check if the parsed value is a string\n  if (typeof parsed === 'string') {\n    // First attempt to parse as JSON\n    try {\n      parsed = JSON.parse(parsed);\n    } catch(e) {\n      // Second attempt to parse with single quotes replaced by double quotes\n      try {\n        parsed = JSON.parse(parsed.replace(/'/g, '\"'));\n      } catch(e2) {\n        // Set parsed to null if both attempts fail\n        parsed = null;\n      }\n    }\n  }\n} catch(e) {\n  // Handle any errors in the outer try block\n  parsed = null;\n}\n\n// Default to an empty array if parsing fails\nif (!parsed) parsed = [];\n\n// Store cleaned JSON string and parsed object in context\nctx._debug_raw['top_tasks_json_clean'] = JSON.stringify(parsed);\nctx['top_tasks_json'] = parsed;\n\n// Return the final parsed result\nreturn ctx['top_tasks_json'];",
+          "customFunctionJavascriptFunction": "// ------------------------------------------------------------\n//  NTT_0 – “ParseTopTasks”\n// ------------------------------------------------------------\n\n// 1️⃣  Grab the whole Agent‑A output (you mapped it as “agentflow_0” in the UI)\nconst agentOutput = input.agentflow_0;\n\n// 2️⃣  Pull the array that lives inside the Agent‑A result\n//     (the property name is the same as in your Agent‑A output)\nconst rawArray = agentOutput?.top_tasks_json ?? [];\n\n// 3️⃣  Make sure it is an array; if not, fall back to an empty array\nconst tasks = Array.isArray(rawArray) ? rawArray : [];\n\n// 4️⃣  Store a *clean* copy on the context for debugging (optional)\nif (typeof context !== 'undefined') {\n  context._debug_raw = context._debug_raw || {};\n  context._debug_raw.top_tasks_json_raw   = rawArray;\n  context._debug_raw.top_tasks_json_clean = JSON.stringify(tasks);\n  context.top_tasks_json = tasks;          // expose for downstream nodes\n}\n\n// 5️⃣  Return the array (this is what the next node will receive)\nreturn tasks;",
           "undefined": ""
         },
         "outputAnchors": [
@@ -1075,8 +1075,8 @@
       "width": 114,
       "height": 66,
       "positionAbsolute": {
-        "x": -1772.6416600621694,
-        "y": 143.56766051429491
+        "x": -1835.2380005810362,
+        "y": -253.78302277938081
       },
       "dragging": false,
       "selected": false
@@ -1571,7 +1571,8 @@
         ],
         "inputAnchors": [],
         "inputs": {
-          "directReplyMessage": "<p><span class=\"variable\" data-type=\"mention\" data-id=\"llmAgentflow_0\" data-label=\"llmAgentflow_0\">{{ llmAgentflow_0 }}</span> </p>"
+          "directReplyMessage": "<p><span class=\"variable\" data-type=\"mention\" data-id=\"llmAgentflow_0\" data-label=\"llmAgentflow_0\">{{ llmAgentflow_0 }}</span> </p>",
+          "undefined": ""
         },
         "outputAnchors": [],
         "outputs": {},
@@ -1627,7 +1628,7 @@
         "selected": false
       },
       "type": "agentFlow",
-      "width": 144,
+      "width": 145,
       "height": 66,
       "selected": false,
       "positionAbsolute": {
@@ -2161,8 +2162,8 @@
     {
       "id": "conditionAgentflow_1",
       "position": {
-        "x": -2002.9671970464478,
-        "y": 56.622852324600785
+        "x": -2110.4696079375453,
+        "y": 145.07420305778203
       },
       "data": {
         "id": "conditionAgentflow_1",
@@ -2432,16 +2433,16 @@
       "height": 80,
       "selected": false,
       "positionAbsolute": {
-        "x": -2002.9671970464478,
-        "y": 56.622852324600785
+        "x": -2110.4696079375453,
+        "y": 145.07420305778203
       },
       "dragging": false
     },
     {
       "id": "customFunctionAgentflow_1",
       "position": {
-        "x": -1761.2636513627592,
-        "y": 11.0004402914482
+        "x": -1723.1615310469274,
+        "y": -3.968249832628601
       },
       "data": {
         "id": "customFunctionAgentflow_1",
@@ -2519,12 +2520,13 @@
         "inputs": {
           "customFunctionInputVariables": [
             {
-              "variableName": "",
-              "variableValue": "<p>{{</p>"
+              "variableName": "agentflow_0",
+              "variableValue": "<p><span class=\"variable\" data-type=\"mention\" data-id=\"llmAgentflow_0\" data-label=\"llmAgentflow_0\">{{ llmAgentflow_0 }}</span> </p>"
             }
           ],
-          "customFunctionJavascriptFunction": "// NormalizeTopTasks\n// 1. Grab the incoming variable (the array)\nconst tasks = ${{ llmAgentflow_0.top_tasks_json }};\n\n// 2. If tasks is undefined or not an array → return []\nif (!Array.isArray(tasks)) {\n  return [];\n}\n\n// 3. Normalise – e.g., make all titles lowercase, trim whitespace, keep first 5 items\nreturn tasks\n  .map(t => t.trim().toLowerCase())\n  .slice(0, 5);",
-          "customFunctionUpdateState": ""
+          "customFunctionJavascriptFunction": "// ------------------------------------------------------------\n//  NTT_1 – “NormalizeTopTasks”\n// ------------------------------------------------------------\n\n// 1️⃣  Grab the array that NTT_0 put into the context\n//     (you must have mapped it as Variable Name = top_tasks_json)\nconst tasks = input.top_tasks_json;\n\n// 2️⃣  Defensive guard – if it isn’t an array, just return an empty one\nif (!Array.isArray(tasks)) {\n  return [];\n}\n\n// 3️⃣  Normalise: extract the *name* of each task, trim & lowercase\n//     (you can change the logic below to whatever you need)\nconst normalised = tasks\n  .map(t => (typeof t.name === 'string' ? t.name : ''))   // get name\n  .map(name => name.trim().toLowerCase())                 // trim & lower\n  .filter(name => name.length > 0)                        // drop empty names\n  .slice(0, 5);                                           // keep first 5\n\n// 4️⃣  Return the normalised list\nreturn normalised;",
+          "customFunctionUpdateState": "",
+          "undefined": ""
         },
         "outputAnchors": [
           {
@@ -2542,8 +2544,8 @@
       "selected": false,
       "dragging": false,
       "positionAbsolute": {
-        "x": -1761.2636513627592,
-        "y": 11.0004402914482
+        "x": -1723.1615310469274,
+        "y": -3.968249832628601
       }
     }
   ],
@@ -2708,46 +2710,6 @@
       "id": "llmAgentflow_0-llmAgentflow_0-output-llmAgentflow-conditionAgentflow_1-conditionAgentflow_1"
     },
     {
-      "source": "customFunction_normalize_top_tasks",
-      "sourceHandle": "customFunction_normalize_top_tasks-output-customFunctionAgentflow",
-      "target": "conditionAgentflow_0",
-      "targetHandle": "conditionAgentflow_0",
-      "data": {
-        "sourceColor": "#2196f3",
-        "targetColor": "#FFB938",
-        "isHumanInput": false
-      },
-      "type": "agentFlow",
-      "id": "customFunction_normalize_top_tasks-customFunction_normalize_top_tasks-output-customFunctionAgentflow-conditionAgentflow_0-conditionAgentflow_0"
-    },
-    {
-      "source": "customFunction_normalize_top_tasks",
-      "sourceHandle": "customFunction_normalize_top_tasks-output-customFunctionAgentflow",
-      "target": "directReplyAgentflow_2",
-      "targetHandle": "directReplyAgentflow_2",
-      "data": {
-        "sourceColor": "#2196f3",
-        "targetColor": "#4DDBBB",
-        "isHumanInput": false
-      },
-      "type": "agentFlow",
-      "id": "customFunction_normalize_top_tasks-customFunction_normalize_top_tasks-output-customFunctionAgentflow-directReplyAgentflow_2-directReplyAgentflow_2"
-    },
-    {
-      "source": "conditionAgentflow_1",
-      "sourceHandle": "conditionAgentflow_1-output-0",
-      "target": "customFunctionAgentflow_1",
-      "targetHandle": "customFunctionAgentflow_1",
-      "data": {
-        "sourceColor": "#FFB938",
-        "targetColor": "#E4B7FF",
-        "edgeLabel": "0",
-        "isHumanInput": false
-      },
-      "type": "agentFlow",
-      "id": "conditionAgentflow_1-conditionAgentflow_1-output-0-customFunctionAgentflow_1-customFunctionAgentflow_1"
-    },
-    {
       "source": "customFunctionAgentflow_1",
       "sourceHandle": "customFunctionAgentflow_1-output-customFunctionAgentflow",
       "target": "conditionAgentflow_0",
@@ -2771,21 +2733,48 @@
         "isHumanInput": false
       },
       "type": "agentFlow",
-      "id": "customFunctionAgentflow_1-customFunctionAgentflow_1-output-customFunctionAgentflow-directReplyAgentflow_2-directReplyAgentflow_2"
+      "id": "customFunctionAgentflow_1-customFunctionAgentflow_1-output-customFunctionAgentflow-directReplyAgentflow_2-directReplyAgentflow_2",
+      "selected": false
     },
     {
-      "source": "conditionAgentflow_1",
-      "sourceHandle": "conditionAgentflow_1-output-1",
-      "target": "customFunction_normalize_top_tasks",
-      "targetHandle": "customFunction_normalize_top_tasks",
+      "source": "customFunction_normalize_top_tasks",
+      "sourceHandle": "customFunction_normalize_top_tasks-output-customFunctionAgentflow",
+      "target": "customFunctionAgentflow_1",
+      "targetHandle": "customFunctionAgentflow_1",
       "data": {
-        "sourceColor": "#FFB938",
-        "targetColor": "#2196f3",
-        "edgeLabel": "1",
+        "sourceColor": "#2196f3",
+        "targetColor": "#E4B7FF",
         "isHumanInput": false
       },
       "type": "agentFlow",
-      "id": "conditionAgentflow_1-conditionAgentflow_1-output-1-customFunction_normalize_top_tasks-customFunction_normalize_top_tasks"
+      "id": "customFunction_normalize_top_tasks-customFunction_normalize_top_tasks-output-customFunctionAgentflow-customFunctionAgentflow_1-customFunctionAgentflow_1"
+    },
+    {
+      "source": "llmAgentflow_0",
+      "sourceHandle": "llmAgentflow_0-output-llmAgentflow",
+      "target": "customFunction_normalize_top_tasks",
+      "targetHandle": "customFunction_normalize_top_tasks",
+      "data": {
+        "sourceColor": "#64B5F6",
+        "targetColor": "#2196f3",
+        "isHumanInput": false
+      },
+      "type": "agentFlow",
+      "id": "llmAgentflow_0-llmAgentflow_0-output-llmAgentflow-customFunction_normalize_top_tasks-customFunction_normalize_top_tasks"
+    },
+    {
+      "source": "conditionAgentflow_1",
+      "sourceHandle": "conditionAgentflow_1-output-0",
+      "target": "directReplyAgentflow_1",
+      "targetHandle": "directReplyAgentflow_1",
+      "data": {
+        "sourceColor": "#FFB938",
+        "targetColor": "#4DDBBB",
+        "edgeLabel": "0",
+        "isHumanInput": false
+      },
+      "type": "agentFlow",
+      "id": "conditionAgentflow_1-conditionAgentflow_1-output-0-directReplyAgentflow_1-directReplyAgentflow_1"
     }
   ]
 }
