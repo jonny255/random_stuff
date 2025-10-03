@@ -6,9 +6,11 @@
 
 
 #   Mindmap AI Assistant
-    -   An AI-powered tool to help you create and manage mind maps.
-    -   Will support SST and eventually TTS as well.
-    -   
+        TODO
+        [ ] Import an mindmap tool as canvas
+        [ ] Add AI, LLM support (would text llm, and llm with make the connections)
+        [ ] Add SST support
+        [ ] Add TTS support
 
 
 
