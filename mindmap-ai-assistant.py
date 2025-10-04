@@ -7,10 +7,14 @@
 
 #   Mindmap AI Assistant
         TODO
-        [ ] Import an mindmap tool as canvas
+        [ ] Import a mindmap tool as canvas
         [ ] Add AI, LLM support (would text llm, and llm with make the connections)
         [ ] Add SST support
         [ ] Add TTS support
+        [ ] Could be used IPO flowise for breaking tasks down into smaller tasks, and maybe if each thing is
+            sequentially numbered, I could then be given the option (like what services I want restarted) of which
+            tasks I want the AI to focus on and move forward with vs which to abandon. That info should also be easily
+            saved for future reference where the AI will be able to train and finetune based on that information.
 
 
 
