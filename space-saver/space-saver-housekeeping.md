@@ -1,20 +1,14 @@
 # README.md
 
-
-
 ## TODO
 
-
-### Automating compression ###
-
+### Automating compression
 
 - [ ]   copy over the 7z compression script
 - [ ]   use a boolean to compress folders incrementally from deepest defined level to the surface
 - [ ]   Maybe create a temp log of md5 hashes all of 7z files?
 
-
-
-### Deduplication Efforts ###
+### Deduplication Efforts
 
 - [ ]   Start with docker container/image
 - [ ]   install sqllite in Dockerfile
@@ -23,23 +17,16 @@
 - [ ]   Run a script that would run independent hash on all files in the list (colume 4).
 - [ ]   Use a `if {[hash] - [hash] == 0}` to cycle through files (colume 5)
 
-1.  Or maybe I could keep it even simpler and use json/csv to store all the information.
-2.  And instead of using `[hash] - [hash] == 0`, if everything is stored via sqllite, the file's hash will also serve as the primary key and the sql server will already have that duplicate detection. Wait, that won't work because it won't accept the hash; yeah just put the hash & calculation on seperate columnes and run the scan that way.
-3.  One file will need to be the control/reference; how to determine which one.
-4.  To automate step 3, find ways to categorize everything so that it could be sorted at this staged. For example, make note of all of the similar directories or the frequent ones, then allow the user to decide which directory will be the control/reference. That way as I'm deleting files, I'm not deleting a dup from dirA, then another dup file from dirB, then last I have to recombine/merge the two directories together.
-5.  
+Or maybe I could keep it even simpler and use json/csv to store all the information.
 
+1. And instead of using `[hash] - [hash] == 0`, if everything is stored via sqllite, the file's hash will also serve as the primary key and the sql server will already have that duplicate detection. Wait, that won't work because it won't accept the hash; yeah just put the hash & calculation on seperate columnes and run the scan that way.
 
+2. One file will need to be the control/reference; how to determine which one.
 
+3. To automate step 3, find ways to categorize everything so that it could be sorted at this staged. For example, make note of all of the similar directories or the frequent ones, then allow the user to decide which directory will be the control/reference. That way as I'm deleting files, I'm not deleting a dup from dirA, then another dup file from dirB, then last I have to recombine/merge the two directories together.
+4.  
 
-
-
-
-
-
-
-
-
+=======================================================================
 
 This plan captures our work in May 2025. This is a 5-week iteration. We will ship in early June.
 
@@ -57,14 +44,14 @@ Below is a summary of the top level plan items.
 
 Legend of annotations:
 
-Mark	Description
-🏃	work in progress                        \
-✋	blocked task                           \
-💪	stretch goal for this iteration         \
-🔴	missing issue reference                 \
-🔵	more investigation required to remove uncertainty   \
-⚫	under discussion within the team    \
-⬛	a large work item, larger than one iteration   \
+Mark Description
+🏃  work in progress                        \
+✋  blocked task                           \
+💪  stretch goal for this iteration         \
+🔴  missing issue reference                 \
+🔵  more investigation required to remove uncertainty   \
+⚫  under discussion within the team    \
+⬛   a large work item, larger than one iteration   \
 Accessibility
 
 Accessibility issues, see query @meganrogge team
@@ -239,6 +226,3 @@ Support mcp servers as a first class resource vscode#248401 @sandy081
 VSCode freezing when adding folder to workspace while working on remote Linux machine vscode-remote-release#10168 @joshspicer
 
 💪 Resolve unique connection issues vscode-remote-release#10412, vscode-remote-release#6319, vscode-remote-release#6600 @joshspicer
-
-
-
