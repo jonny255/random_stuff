@@ -1,0 +1,6 @@
+Searching for sub‑directories (1 ≤ depth ≤ 1)...
+find: ‘./Downloads 11,209F 125GB/Datasets’: No such file or directory
+⚠️  No sub‑directories found – nothing to compress.
+Searching for files (1 ≤ depth ≤ 1)...
+find: ‘./Downloads 11,209F 125GB/Datasets’: No such file or directory
+⚠️  No files found – nothing to hash.

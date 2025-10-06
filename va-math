@@ -1,0 +1,94 @@
+
+
+### VA Math:
+
+#### VA disability ratings schedule
+
+#### Equations
+
+int
+
+(dis_a %) * 100 = 00 Gross Rating Percentage (GRP)
+
+100 - GRP = 00 Total Rating Percentage (TRP)
+
+
+// GRP = Next Rating Percentage (NRP)
+
+
+(dis_b %) * RAP = NRP     (70% = 70; 100 - 70 = 30 (RAP); dis_b% (10% Tinnitus) = 10; 10 * 30)
+
+
+
+
+dis_a70 = 70 GRP
+100 - GRP = 30 Remaining Available Percentage (RAP)
+
+
+
+dis_1_name = "Tinnitus"
+dis_1_rating = "10"
+
+dis_2_name = "L Arm injury"
+dis_2_rating = "30"
+
+dis_3a_name = "BH"
+dis_3a_rating = "0"
+
+dis_3b_name = "BH"
+dis_3b_rating = "30"
+
+dis_3c_name = "BH"
+dis_3c_rating = "50"
+
+dis_3d_name = "BH"
+dis_3d_rating = "70"
+
+dis_3e_name = "BH"
+dis_3e_rating = "100"
+
+dis_4_name = "Sleep Apnea"
+dis_4_rating = "0"
+
+dis_5_name = "Cancer"
+dis_5_rating = "30"
+
+dis_6_name = "Nicotine Addition"
+dis_6_rating = "10"
+
+dis_7_name = "ALS"
+dis_7_rating = "50"
+
+
+TOTAL_DISABILITY = "0"
+CURRENT_RATING = "0"
+NEW_DISABILITY = "0"
+REMAINING_PERCENTAGE = "0"
+
+
+
+
+sum = CURRENT_RATING (NEW_DISABILITY / REMAINING_PERCENTAGE)
+
+70 | 10 * 30 = 3 + 70 = 73 or [70] | 27 | 50 * 27 = 18.5 + 73 = 91.5 or [92] = [90]
+
+70 | 50 * 30 = 15 + 70 = 85 or [90] | 15 | 10 * 15 = 1.5 + 90 = 91.5 or 92 or = [90]
+
+
+
+
+if TOTAL_DISABILITY == awk([0-9][0-4]):
+    sed/awk [0-9][0-4] > round(TOTAL_DISABILITY)
+
+
+
+
+
+
+
+
+
+
+
+
+
