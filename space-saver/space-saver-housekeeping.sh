@@ -92,7 +92,7 @@ for FILE in "${FILES[@]}"; do
 
 #  7z a -bd -mmt -mx=9 -t7z -y "$ARCHIVE" "$FILE" >/dev/null
 
-  echo "sha256 " $FILE
+sha256sum $FILE
 
 #  if [[ $? -ne 0 ]]; then        # Lookup what that means; I forgot
 #    echo "❌  7z failed on $FILE – aborting."
@@ -103,3 +103,9 @@ for FILE in "${FILES[@]}"; do
 done
 
 echo "✅  All $TOTAL files hashed."
+
+
+TODO:
+
+  [ ] Script/process to flatten docker images
+  [ ] 
