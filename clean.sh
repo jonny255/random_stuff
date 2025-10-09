@@ -10,7 +10,7 @@
 #
 # To run this script from anywhere, place it in your /usr/local/bin directory
 #
-# To list your partition sizes run: df -Th | sort
+# To list your partition sizes run: df -Th | sort 
 ###############################################################################
 
 # Remove apt / apt-get files
