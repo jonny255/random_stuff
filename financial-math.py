@@ -350,6 +350,42 @@ class main:
 
 
 
+        # Synthetic CDO vs 
+
+
+        def fractional_reserve_banking():
+                # The Federal Reserve
+                Initial_bal = 1000
+                Reserved_pct = 10
+                Amt_to_lend_pct = 90
+                lent_amt_1 = 900
+                amt_reserved = 100
+                lent_amt_1_apy = 0.0191
+
+                bal_2 = 900
+                lent_amt_2 = 810
+                amt_reserved = 90
+
+                bal_3 = 729
+
+        def CDO():
+                jameithealtcoin =  [
+                        BTC  : 25%
+                        ETH  : 20%
+                        USDT : 50%
+                        AAVE : 5%
+                ]
+
+
+        def CDO_synthetic(self):
+                asset_to_stake = CDO
+                self.convert(asset_to_stake)
+                # Use this CDO as a currency, and then stake it on eth; or could I create my own coin
+                # that IS the CDO, have it ETH based, and then could I stake that for stETH and then
+                # borrow USDC against that stETH?
+
+
+
 
 
 
@@ -359,6 +395,24 @@ class main:
 
 
 """
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+S"""
 
 
 
