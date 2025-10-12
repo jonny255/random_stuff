@@ -1,0 +1,27 @@
+
+
+    {
+        "staking coins":
+            {
+                "crypto"    :   "USDC",
+                "APY"       :   "4.1",
+                "Payout"    :   "14"
+            },
+            {
+                "crypto"    :   "ETH",
+                "APY"       :   "1.91",
+                "Payout"    :   "3d"
+            },
+            {
+                "crypto"    :   "AAVE",
+                "APY"       :   "3.3",
+                "Payout"    :   "3d"
+            },
+            {
+                "crypto"    :   "ETH",
+                "APY"       :   "3.93",
+                "Payout"    :   "7d"
+            }
+    }
+
+
