@@ -86,3 +86,26 @@ Compare and contrast the savings you'll realize if you prepay _x_ amount of mont
 ### Advanced Investment Strategies
 
 For prepayment of goods and services options, crunch numbers to determine which prepayment plan/option will yield you the most return on your investment. Then take that percentage and compare it with any debts that you have, then minus that from what your investment RoR is to determine what is the most and best use of your money.
+
+Total amount:   1000
+
+ETH:    $1000   stETH:  $700    APY:    1.91   RoR:    $13.37
+
+stETH:  700 USDC:   $490  APY:  4.1    RoR: $20.09    Total APY:  $33.46
+
+AAVE:   490 CRO: $343    APY:  2.4  RoR:
+
+SOL:    $343    COMP:  $240.1   APY: 6.3  RoR:
+
+IXP:    $240.11 Memecoin: $168.07 APY: 27  RoR:
+
+
+
+
+
+
+
+
+
+
+

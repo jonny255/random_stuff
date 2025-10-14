@@ -3,8 +3,14 @@ import math
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
+import best_payment_option_logic
+import context_scoped_evaluation_engine
+
+
 
 """
+personal bet with myself: total LOC will be approximately 7,000 LOC, though the range will be 5,000 to 10,000 LOC
+
 what's the difference between building a financial instrument vs investment vehicle.
         I think investment vehicle ismore macro, like stocks, 
             TODO
@@ -90,11 +96,13 @@ class main:
                 rate_90 = 48
                 rate_180 = 51
 
+                # Stock rate change calculator
         def rate_change(self):
                 rate_change_30 = "rate_30 - rate_0"
                 rate_change_90 = "rate_90 - rate_30"
                 rate_change_180 = "rate_180 - rate_90"
 
+                # Rate change tolerance calculator
         def tolerance(self):
                 tolerance_30 = "rate_change_30 / APY"
                 tolerance_90 = "rate_change_90 / APY"
@@ -233,14 +241,6 @@ class main:
 
         def number_crunching(self):
 
-
-
-                try:
-                        sort = ['a', 'd', 'b', 'e', 'f', 'g', 'y', 'd', "z", "d"]
-                except:
-                        pass
-
-
                 def stake_stacking_lvl1(self):
                         ETH_AMT = 500
                         ETH_LTV_pct = 0.70  # Maybe include the borr_stETH here?
@@ -288,7 +288,8 @@ class main:
                                 print("new amount: " + new_amt)
                         while not (ETH_LTV_amt / ETH_AMT) >= 0.7:
                                 continue
-                        
+
+                        # replay of crypto/defi loan
                 def partly_repay_loan(self):
                         partly_repay_loan_amt = 20
                         ETH_AMT = 500
@@ -300,7 +301,21 @@ class main:
                         while not (ETH_LTV_amt / ETH_AMT) >= 0.7:
                                 continue
 
+                        # Backtest rewards
+                def backtest_rewards(self):
+                        points_conversion = "pts * 0.01"
+                        points = ""
+                        reward_type = points
+                        cashback = ""
+                        reward_category = "gas"
+                        timeframe = "JUN - OCT"
 
+                        # Previous transactions that meet critera and 
+                        previous_transactions = []
+
+                        # match previous_transactions:
+                        #         case 1 | 2 | 3 | 4 if 'x' == 4:
+                                
 
 
 
@@ -319,7 +334,11 @@ class main:
                                 bill1 = "electricity"           # Move to json file
                                 utility_company = "CPS"         # Move to json file
                                 kwh = 0
+                                kwm = kwh / 60
+                                whm = 16.67 # 1,000Wh / 60min = 16.67 watts/hr
+                                tiers = {"tier 1" : "0.128", "tier 2" : "0.142", "tier 3" : "0.175"}
                                 rate = 0.128 * kwh              # Move to json file
+                                ratecostm = rate / 60
                                 avg_kwh_3d = 0
                                 avg_kwh_5d = 0
                                 forecast_kwh_1d = 0
@@ -331,7 +350,69 @@ class main:
                                 def create_maxtrix():
                                 # matrix table of kwh used per day, with current day, and predictions
                                 # Another matrix with the solar/free energy product, pricing diff from CPS, etc
-                                        foo = "bar"
+                                        kwh_used = {
+                                                "Day 1" : "5",
+                                                "Day 2" : "2",
+                                                "Day 3" : "8", 
+                                                "Day 4" : "7",
+                                                "Day 5" : "2"
+                                        }
+#kwh_related = {
+#    "kwh_used": {"fee_1": 2, "fee_2": 7, "fee_3": 3},
+#    "kwh_produced":  {"fee_1": 1, "fee_2": 0, "fee_3": 6},
+#    "estimated_kwh_gotaways":  {"fee_1": 4, "fee_2": 2, "fee_3": 0},
+#}
+                                        kwh_produced = {
+                                                "Day 1" : "6",
+                                                "Day 2" : "2",
+                                                "Day 3" : "6", 
+                                                "Day 4" : "6",
+                                                "Day 5" : "4"
+                                        }
+
+                                        estimated_kwh_gotaways = {
+                                                "Day 1" : "2",
+                                                "Day 2" : "0",
+                                                "Day 3" : "0", 
+                                                "Day 4" : "3",
+                                                "Day 5" : "2"
+                                        }
+
+                                        for x in kwh_used:
+                                                total_kwh = x
+                                        
+                                maintenance_cost_YTD = 0
+                                total_monthly_loan_amt = 0
+                                total_monthly_loan_principle = 0
+                                total_monthly_loan_interest = 0
+                                capex = 5500
+                                base = ""
+                                loan_amortization = {"SunTan" : "28", "Signature Solar" : "21", "Battery Hookup" : "12"}
+                                equip_lifespan = {"Hybrid Inverter" : "84", "PV array" : "180", "LFP 5.12KWh" : "180"}
+                                Projected_MWh_Production_CY2025 = "3/yr or 250KWh/month"
+
+                                green_kwh_cost = (
+# base = total_monthly_loan_amt * 0.128
+# amortized_monthly_cost_of_Capex = ((capex / 180 = 30.556))
+# principle_loan_amt */+- base, capex <- will come back later to this
+#
+# Idea here is to stretch/spread the cost more inline with equip lifespan, without refi any of the loans
+#
+# 250KWh - (current usage) = -00(consumed) or +00 (gotaway) NOTE: to battery = consumed (AKA captured)
+# -00KWh consumed = good
+# +00KWh gotaway = price per kwh penalty
+#
+                                )
+
+                                kwh_forecast_today = 17
+                                kwh_battery_budget = 7
+                                kwh_budget_today = 10
+                                def Preassign_KWh_Capacity():
+                                        appliances = {"fridge" : "1D = (.134 * kwh) * 8"}
+                                        kitchen = {"coffee = ((kwm * 1.5) * 7.5minutes of use) = 0.1875kwh", "microwave = ((ratem * 1.5) * 7.5minutes of use) = 0.1875kwh"}
+                                        homelab = {"homelab" : "(.35 * kwh) * 24"}
+                                        ac = {"window unit in office" : "(1.1 * kwh) * 'x'"}
+                                Expected_remaining_kwh_capacity = 3
 
                         def fuel():
                                 fuel_type = ["gasoline", "diesel", "LNG", "electric", "hybrid", "alien-tech"]
@@ -339,10 +420,136 @@ class main:
 
                         def food():
                                 greenhouse = "yes"
+                                plants = ""
+                                electricity_usage = ""
+                                farmersmarket = ""
+                        
+                        def coupon_tracker():
+                                groceries = ""
+
+
                         
                         def cellular_service():
-                                mains = ["tmobile", "at&T", "verizon"]
-                                alternatives = ["mint", "cricket", "vongage?", "metro"]
+                                mains = ["T-Mobile", "AT&T", "Verizon"]
+                                alternatives = ["Mint (T-Mobile)", "cricket (AT&T)", "vongage?", "Metro"]
+
+
+
+                def utility_payment_methods(self):
+                        payment_options = ["debit", "checking", "credit"]
+
+                                # CPS
+                        def energy_provider():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+                        
+                                # T-Mobile
+                        def phone_provider():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # SAWS
+                        def water_utility():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # AT&T
+                        def internet_provider():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # Buck-ees
+                        def gas_station():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # Geico
+                        def auto_insurance():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # Placeholder 1
+                        def placeholder1():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+                                # Placeholder 2
+                        def placeholder2():
+                                debit_fee = 0.00
+                                checking_fee = 0.00
+                                credit_card_fee = 0.02
+
+
+
+
+
+
+                def best_payment_option_logic(self):
+                        provider_type = "energy"
+                        best_accts = {
+                                "debit" : "9234",       # Funds Available
+                                "checking" : "2475",    # Funds Available
+                                "credit" : "2745",       # 1% cash back
+                                "digital wallet/card" : "Gemini"        # Promotion: "Earn $200 in crypto if you spend $3000 in 90 days."
+                        }
+
+        #                if best_accts + energy_provider.utility_payment_methods == 2:
+        #                        foo = "bar"
+
+
+
+                        selected_acct = "Gemini"
+
+
+
+
+
+
+
+
+
+                payment_method_fees = {
+                        "energy_provider": {"Debit": 0.02, "Checking": 0.07, "Credit": 0.03},
+                        "phone_provider": {"Debit": 0.01, "Checking": 0.00, "Credit": 0.06},
+                        "water_provider": {"Debit": 0.04, "Checking": 0.02, "Credit": 0.00},
+                }
+
+                best_option = {
+                        "Debit" : "9234",       # Funds Available
+                        "Checking" : "2475",    # Funds Available
+                        "Credit" : "2745",       # 1% cash back
+                        "digital wallet/card" : "Gemini"        # Promotion: "Earn $200 in crypto if you spend $3000 in 90 days."
+                }
+
+
+
+
+
+
+
+# If you'll have dozens of providers and many fees:
+#       Consider storing them in a CSV or JSON file and load them up dynamically.
+#       Build your conditions dynamically from a list or config file.
+#       Use pandas if you want full-blown matrix operations or comparisons.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -353,7 +560,7 @@ class main:
         # Synthetic CDO vs 
 
 
-        def fractional_reserve_banking():
+        def fractional_reserve_banking(self):
                 # The Federal Reserve
                 Initial_bal = 1000
                 Reserved_pct = 10
@@ -368,21 +575,26 @@ class main:
 
                 bal_3 = 729
 
+                # define CDO
         def CDO():
                 jameithealtcoin =  [
-                        BTC  : 25%
-                        ETH  : 20%
-                        USDT : 50%
-                        AAVE : 5%
+        #                BTC  : 25%
+        #                ETH  : 20%
+        #                USDT : 50%
+        #                AAVE : 5%
                 ]
 
-
+                # define synthetic CDO
         def CDO_synthetic(self):
                 asset_to_stake = CDO
                 self.convert(asset_to_stake)
                 # Use this CDO as a currency, and then stake it on eth; or could I create my own coin
                 # that IS the CDO, have it ETH based, and then could I stake that for stETH and then
                 # borrow USDC against that stETH?
+
+
+
+
 
 
 
@@ -412,23 +624,45 @@ class main:
 
 
 
-S"""
+Over-leveraged Lending
+Total amount:	$1,000		Pct Lent:	70%		APY:		RoR:		Total APY:		Reserved Amt:	30%	Total Reserved:
+ETH:		$1,000		stETH:		$700		1.91%		$13.37		$13.37				$300.00		$300.00
+stETH:		$700		USDC:		$490		4.1%		$20.09		$33.46				$210.00		$510.00
+AAVE:		$490		CRO:		$343		2.4%		$8.23		$41.69				$147.00		$657.00
+SOL:		$343		COMP:		$240		6.3%		$15.13		$56.82				$102.90		$759.90
+IXP:		$240		DOGE:		$168		27%		$45.38		$102.20				$72.03		$831.93
+														
+														
+Average Annual APY:	8.34%													
+Average Annual Net:	$1,083.42													
+								Max:			TLA Pct:	1.941177		
+Total Annual RoR:	10.22%					41.71%								
+Total Annual RoR Amt:	$102.20													
+Total Reserved Pct:	83.19%													
+														
+Total Leveraged Amt:	$1,941													
+TLA Pct:		194.12%													
 
 
 
 
 
+                def best_payment_option_logic(utility_payment_methods, best_accts):
+                        results = []
 
-try:
-  print(x)
-except:
-  print("An exception occurred")
+                        for provider_type, payment_fees in utility_payment_methods.items():
+                                for fee_name, fee_value in payment_fees.items():
+                                # Example: dynamic logic, e.g. sum Credit with each fee
+                                        total = best_accts["Credit"] + fee_value
 
+                                        results.append({
+                                                "provider": provider_type,
+                                                "fee": fee_name,
+                                                "sum": total
+                                        })
 
+                        # Sort ascending by 'sum'
+                        results.sort(key=lambda x: x["sum"])
 
-
-
-
-
-
+                        return results
 """

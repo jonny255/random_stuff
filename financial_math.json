@@ -1,0 +1,405 @@
+
+
+{
+    "Staking Coins":
+    [
+        {
+            "USDC":
+            {
+                "crypto"    :   "USDC",
+                "APY"       :   "4.1",
+                "Payout"    :   "14",
+                "Liquidate" :   "0d"
+            },
+            "ETH":
+            {
+                "crypto"    :   "ETH",
+                "APY"       :   "1.91",
+                "Payout"    :   "3d",
+                "Liquidate" :   "58d"
+            },
+            "AAVE":
+            {
+                "crypto"    :   "AAVE",
+                "APY"       :   "3.3",
+                "Payout"    :   "3d",
+                "Liquidate" :   "58d"
+            },
+            "SOL":
+            {
+                "crypto"    :   "SOL",
+                "APY"       :   "3.93",
+                "Payout"    :   "7d",
+                "Liquidate" :   "58d"
+            }
+        }
+    ],
+
+
+
+    "Credit Cards":
+    [
+        {
+            "2213":
+            {
+                "Credit Card Number": "2213",
+                "Total Balance" : "5134.41",
+                "Interest Saving Balance" : "5018.13",
+                "APR" : "0.2499",
+                "Compounding Freq" : "Monthly",
+                "Minimum Payment" : "196.17",
+                "Due Date" : "10/25/2025",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "Amazon Purchases" : "0.05",
+                    "Gas Stations" : "0.02",
+                    "Restaurants" : "0.02",
+                    "Local Transit Commuting" : "0.02",
+                    "All Other Purchases" : "0.01"
+                }
+            },
+            "7912":
+            {
+                "Credit Card Number": "7912",
+                "APR" : "0.1724",
+                "Total Balance" : "10413",
+                "Interest Saving Balance" : "None",
+                "Minimum Payment" : "267",
+                "Due Date" : "10/20/2025",
+                "Grace Period" : "None",
+                "Promotion" : "None",
+                "Rewards":
+                {
+                    "Cash Back" : "0.015 * $1"
+                }
+            },
+            "9596":
+            {
+                "Credit Card Number": "9596",
+                "APR" : "0.2374",
+                "Total Balance" : "2525",
+                "Interest Saving Balance" : "2335",
+                "Minimum Payment" : "23",
+                "Due Date" : "4/23/2025",
+                "Grace Period" : "4/31/2025",
+                "Promotion" : "none",
+                "Rewards" : "none"
+            },
+            "3764":
+            {
+                "Credit Card Number": "3764",
+                "APR" : "0.2374",
+                "Total Balance" : "2525",
+                "Interest Saving Balance" : "2335",
+                "Minimum Payment" : "23",
+                "Due Date" : "4/23/2025",
+                "Grace Period" : "4/31/2025",
+                "Promotion" : "none",
+                "Rewards" : "none"
+            }
+        }
+    ],
+
+
+    "Prospective Credit Cards":
+    [
+        {
+            "HEB":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.2499",
+                "Penalty APR" : "",
+                "Compounding Freq" : "",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "HEB Brands" : "0.05",
+                    "Favor Delivery" : "0.05",
+                    "All Other Purchases" : "0.015"
+                }
+            },
+
+            "HEB Fuel":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.2499",
+                "Penalty APR" : "",
+                "Compounding Freq" : "",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "HEB Brands" : "0.05",
+                    "Favor Delivery" : "0.05",
+                    "All Other Purchases" : "0.015"
+                }
+            },
+            
+            "Military Star Card":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.1424",
+                "Penalty APR" : "0.2224",
+                "Compounding Freq" : "",
+                "Grace Period" : "0",
+                "Promotion" : "0% Interest plus no payments* for 6 months on Home Depot Purchases with military star card",
+                "Promotion Expiration" : "12/31/2025",
+                "Rewards":
+                {
+                    "Rewards Program" : "0.02",
+                    "Multiple Discounts" : "Promotional 0% APR offers; fixed monthly payments for 36,48,60 months with PayYourWay; exclusive savings just for cardholders; 5 cents off per gallon of fuel every day; 10% off at exchange restaurants every day; upon acct approval, new mil* accounts will receive a 10% discount in form of a credit for purchases on first day.",
+                    "Misc" : "No late, annual or over-limit fees; competitive low APR; no back-interest when 0% promotions expire"
+                }
+            },
+            
+            "Buc-ee's Platinum Mastercard":
+            {
+                "Credit Card Number": "",
+                "APR for Purchases" : "0.1348-1799",
+                "APR for Balance Transfers" : "0.1348-1799",
+                "Compounding Freq" : "Monthly",
+                "Grace Period" : "25",
+                "Promotion" : "0% APR for purchases made first 6 months, 0% APR on bal transfers for the first 12 months when processed within the first 30 days of account opening",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "Buc-ee's" : "0.05",
+                    "Buc-ee's pump" : "0.05",
+                    "All Other Purchases" : ""
+                },
+                "misc notes" : "50 mi on way/ 100 miles round trip; likewise, 1/2 hrs"
+            },
+            
+            "ValuePay":
+            {
+                "Credit Card Number": "ValuePay (debit virtual account)",
+                "APR" : "0",
+                "Compounding Freq" : "",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "Fuel Discount when using the app" : "0.10"
+                }
+            },
+            
+            "gyuj":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.2499",
+                "Compounding Freq" : "Monthly",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "HEBBrands" : "0.05",
+                    "FavorDelivery" : "0.05",
+                    "All Other Purchases" : "0.015"
+                }
+            },
+            
+            "gyuj":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.2499",
+                "Compounding Freq" : "Monthly",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "HEBBrands" : "0.05",
+                    "FavorDelivery" : "0.05",
+                    "All Other Purchases" : "0.015"
+                }
+            },
+            
+            "gyuj":
+            {
+                "Credit Card Number": "",
+                "APR" : "0.2499",
+                "Compounding Freq" : "Monthly",
+                "Grace Period" : "0",
+                "Promotion" : "None",
+                "Promotion Expiration" : "None",
+                "Rewards":
+                {
+                    "HEBBrands" : "0.05",
+                    "FavorDelivery" : "0.05",
+                    "All Other Purchases" : "0.015"
+                }
+            }
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+    "National Stats":
+    [
+        {
+            "GDP":
+            {
+                "GDP" : "274824984"
+            },
+            "Nat Int Rate":
+            {
+                "Nat Int Rate" : "0.029"
+            },
+            "Unemployment Rate":
+            {
+                "Unemployment Rate" : "0.02"
+            }
+        }
+    ],
+
+    "Personal Loans":
+    [
+        {
+            "Signature Solar":
+            {
+                "Lender" : "Affirm",
+                "Total Balance Loan" : "23523",
+                "Remaining Amount" : "23425",
+                "APR" : "0.2542",
+                "Due Date" : "4/23/2025",
+                "Minimum Due" : "213",
+                "Grace Period" : "4/31/2025"
+            },
+            "SunTan Energy":
+            {
+                "Lender" : "Shop Pay (powered by Affirm)",
+                "Total Balance Loan" : "23523",
+                "Remaining Amount" : "23425",
+                "APR" : "0.2542",
+                "Due Date" : "4/23/2025",
+                "Minimum Due" : "213",
+                "Grace Period" : "4/31/2025"
+            },
+            "Battery Hookup":
+            {
+                "Lender" : "Chime? Paypal?",
+                "Total Balance Loan" : "23523",
+                "Remaining Amount" : "23425",
+                "APR" : "0.2542",
+                "Due Date" : "4/23/2025",
+                "Minimum Due" : "213",
+                "Grace Period" : "4/31/2025"
+            }
+        }
+    ],
+
+
+    "Crypto Cards Rewards":
+    [
+        {
+            "CoinbaseOne":
+            {
+                "Allowance Caps"    : "5000",
+                "Gas Stations/EV Charging"   : "0.04",
+                "groceries"         : "0.02",
+                "Restaurants"        : "0.03",
+                "Everything Else"   : "0.01",
+                "Use staked coins allowed" : "yes"
+            },
+
+            "Gemini":
+            {
+                "Allowance Caps"    : "5000",
+                "Gas Stations/EV Charging"   : "0.04",
+                "groceries"         : "0.02",
+                "Restaurants"        : "0.03",
+                "Everything Else"   : "0.01",
+                "Promotion"         : "Earn $200 in crypto if you spend $3000 in 90 days.",
+                "Use staked coins allowed" : "yes"
+            }
+        }
+    ],
+
+    "Exchanges":
+    [
+        {
+            "Coinbase":
+            {
+                "Days to unbound ETH"   : "60 days",
+                "Gas fees import to CB" : "0.02",
+                "Gas fees export from CB"   : "0.00"
+            },
+
+            "Gemini":
+            {
+                "Days to unbound ETH"   : "variable",
+                "Range in days to unbound ETH"  : "6-60 days",
+                "Days to unbound SOL"   : "varaible",
+                "Range in days to unbound SOL"  : "3-4 days",
+                "Gas fees import to Gemini" : "0.02",
+                "Gas fees export from Gemini"   : "0.00"
+            }
+        }
+    ],
+
+    "Allowable Coins Criteria":
+    [
+        {
+            "Allowable Coins Trading": {
+                "daily volume"  : "150000",
+                "Market Cap"    : "",
+                "Fully diluted market cap"  : "",
+                "Circulating Supply"    : "12M",
+                "Liquidity" : "$1.886M",
+                "Mintable" : "Yes, No, Optional",
+                "Developer Control" : false,
+                "Top 10 holder concentration"   : "25%",
+                "buy tax" : 0.000,
+                "sell tax" : 0.00,
+                "Holders" : "25000",
+                "Creation Date" : "",
+                "Age"   : "90 days"
+            },
+            "Allowable Coins Holding": {
+                "daily volume"  : "150000",
+                "Market Cap"    : "",
+                "Fully diluted market cap"  : "",
+                "Circulating Supply"    : "12M",
+                "Liquidity" : "$1.886M",
+                "Mintable" : "Yes, No, Optional",
+                "Developer Control" : false,
+                "Top 10 holder concentration"   : "25%",
+                "buy tax" : 0.000,
+                "sell tax" : 0.00,
+                "Holders" : "25000",
+                "Creation Date" : "",
+                "Age"   : "90 days",
+                "APY"   : "1.91"
+            }
+        }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
