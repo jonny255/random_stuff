@@ -47,16 +47,28 @@ dis_3d_rating = "70"
 dis_3e_name = "BH"
 dis_3e_rating = "100"
 
-dis_4_name = "Sleep Apnea"
+dis_4_name = "Sleep_Apnea_0"
 dis_4_rating = "0"
 
-dis_5_name = "Cancer"
+dis_4_name = "Sleep_Apnea_30"
+dis_4_rating = "30"
+
+dis_4_name = "OSA_50"
+dis_4_rating = "50"
+
+dis_4_name = "OSA_70"
+dis_4_rating = "70"
+
+dis_4_name = "OSA_100"
+dis_4_rating = "100"
+
+dis_5_name = "Cancer_30"
 dis_5_rating = "30"
 
 dis_6_name = "Nicotine Addition"
 dis_6_rating = "10"
 
-dis_7_name = "ALS"
+dis_7_name = "ALS_5-"
 dis_7_rating = "50"
 
 
